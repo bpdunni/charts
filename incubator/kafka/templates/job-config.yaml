@@ -30,16 +30,16 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: "/usr/local/script"
-{{- if .Values.configJob.tolerations }}
+{{- if .Values.tolerations }}
       tolerations:
-{{ toYaml .Values.configJob.tolerations | indent 8 }}
+{{ toYaml .Values.tolerations | indent 8 }}
 {{- end }}
-{{- if .Values.configJob.affinity }}
+{{- if .Values.affinity }}
       affinity:
-{{ toYaml .Values.configJob.affinity | indent 8 }}
+{{ toYaml .Values.affinity | indent 8 }}
 {{- end }}
-{{- if .Values.configJob.nodeSelector }}
+{{- if .Values.nodeSelector }}
       nodeSelector:
-{{ toYaml .Values.configJob.nodeSelector | indent 8 }}
+{{ toYaml .Values.nodeSelector | indent 8 }}
 {{- end }}
 {{- end -}}
